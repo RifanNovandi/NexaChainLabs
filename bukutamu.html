@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Tamu - NexaChain Labs</title>
+  <meta name="description" content="Tinggalkan pesan, pertanyaan, atau kolaborasi Web3 untuk tim NexaChain Labs. Kami terbuka untuk diskusi teknis, partnership, dan masukan komunitas.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bukutamu.css">
+</head>
+<body>
+  <div id="preloader">
+    <div class="preloader-logo">NexaChain<span>Labs</span></div>
+  </div>
+  <header id="rifan_header">
+    <div class="rifan_logo"><img src="img/Logo.png" alt="NexaChain Labs Logo" class="logo-image">NexaChain<span>Labs</span></div>
+    <nav class="rifan_menu">
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="proyek.html">Proyek</a></li>
+        <li><a href="tim.html">Tim</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="bukutamu.html" class="active">Buku Tamu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="rifan_bukutamu">
+    <div class="container">
+      <div class="rifan_bukutamu_content">
+        <h2>💬 Buku Tamu Komunitas</h2>
+        <p>
+          Kami percaya inovasi lahir dari dialog terbuka.  
+          Tinggalkan pesan Anda — apakah itu pertanyaan teknis, usulan kolaborasi, masukan keamanan, atau sekadar sapaan dari sesama penggiat Web3.
+        </p>
+        
+        <form id="rifan_form_bukutamu" onsubmit="return rifanKirimPesan()">
+          <label for="nama">Nama atau Handle Web3:</label>
+          <input type="text" id="nama" name="nama" placeholder="Contoh: @alice.eth atau Alice Tan" required>
+
+          <label for="email">Email atau Wallet Address (opsional):</label>
+          <input type="text" id="email" name="email" placeholder="alice@domain.com atau 0x...">
+
+          <label for="pesan">Pesan Anda:</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Apa yang ingin Anda sampaikan kepada tim NexaChain Labs?..." required></textarea>
+
+          <button type="submit" class="rifan_btn">Kirim ke Blockchain</button>
+        </form>
+
+        <p id="notif" class="notif"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="rifan_footer">
+    <p>&copy; 2025 NexaChain Labs. Membangun infrastruktur kepercayaan untuk Web3.</p>
+  </footer>
+     <button id="scrollToTop" class="scroll-to-top" aria-label="Kembali ke atas">
+        ↑
+     </button>
+  <script src="js/script.js"></script>
+  <script src="js/bukutamu.js"></script>
+  <script>
+    function rifanKirimPesan() {
+      const notif = document.getElementById('notif');
+      const nama = document.getElementById('nama').value;
+      
+      notif.textContent = `Terima kasih, ${nama}! Pesan Anda telah dikirim ke tim kami. ✅`;
+      notif.style.color = '#00e5ff';
+      notif.style.marginTop = '15px';
+      notif.style.fontWeight = '500';
+  
+      document.getElementById('rifan_form_bukutamu').reset();
+
+      return false; 
+    }
+    
+  </script>
+</body>
+</html>
