@@ -1,0 +1,202 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rifan_kontak {
+  padding: 80px 0;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.7);
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.rifan_kontak h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+.rifan_kontak p {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.rifan_info_kontak {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.info_box {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info_box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.info_box h3 {
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  margin: center;
+}
+
+.info_box p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info_box a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.info_box a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.info_box code {
+  display: block;
+  background: rgba(0, 20, 40, 0.5);
+  padding: 6px;
+  border-radius: 6px;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  word-break: break-all;
+}
+.copy-btn {
+  margin-left: 8px;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #666;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.copy-btn i {
+  transition: color 0.2s ease;
+}
+
+/* Efek saat berhasil disalin */
+.copy-btn.copied {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.copy-btn.copied i {
+  color: #2ecc71;
+  animation: pulse 1.2s ease-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.form-container {
+  width: 1000px;
+  max-width: 320px; 
+  margin: 0 auto; 
+  
+}
+
+.rifan_form_kontak {
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  text-align: left;
+}
+
+.rifan_form_kontak h3 {
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.rifan_form_kontak input,
+.rifan_form_kontak textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: rgba(0, 10, 20, 0.4);
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.rifan_form_kontak input:focus,
+.rifan_form_kontak textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+.rifan_btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .rifan_info_kontak {
+    grid-template-columns: 1fr;
+  }
+}
+.form-feedback {
+  padding: 10px;
+  border-radius: 6px;
+  background: rgba(0, 20, 40, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.form-feedback--success {
+  border-left: 3px solid #00e5ff;
+}
+
+.form-feedback--error {
+  border-left: 3px solid #ff4081;
+}
+
+.form-feedback--warn {
+  border-left: 3px solid #ffea00;
+}

@@ -1,0 +1,123 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rifan_proyek {
+  padding: 80px 0;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.7);
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.rifan_proyek h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+.deskripsi {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.grid_proyek {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.proyek_item {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.proyek_item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.2);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.project-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.proyek_item:hover .project-icon {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.proyek_item h3 {
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  margin: 0 0 12px 0;
+}
+
+.project-client {
+  font-size: 0.95rem;
+  color: #8a2be2;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-stack span {
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--accent-cyan);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: 'Orbitron', monospace;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .rifan_proyek h2 {
+    font-size: 2rem;
+  }
+
+  .proyek_item {
+    padding: 24px;
+  }
+}
+.project-image {
+  width: 200px;             /* Diperbesar dari 80px → 120px */
+  height: 200px;            /* Tetap 1:1 */
+  object-fit: cover;        /* Agar gambar tidak terdistorsi */
+  border-radius: 16px;      /* Sudut lebih bulat, modern */
+  display: block;
+  margin: 0 auto 1.5rem;    /* Jarak bawah lebih lebar agar tidak terlalu rapat */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Bayangan halus untuk kedalaman */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}

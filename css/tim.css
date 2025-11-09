@@ -1,0 +1,84 @@
+.rifan_tim {
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.7);
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.rifan_tim h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+.rifan_deskripsi_tim {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.rifan_anggota_tim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rifan_kartu_tim {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rifan_kartu_tim:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.25);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.rifan_kartu_tim h3 {
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  margin: 0 0 10px 0;
+}
+
+.jabatan {
+  font-size: 0.95rem;
+  color: #8a2be2;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tim_foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+@media (max-width: 768px) {
+  .rifan_tim h2 {
+    font-size: 2rem;
+  }
+
+  .rifan_kartu_tim {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-dark: #0b0e1a;
+  --bg-card: #121629;
+  --text-primary: #e6f1ff;
+  --text-secondary: #a0b3d0;
+  --accent-cyan: #00e5ff;
+  --accent-purple: #8a2be2;
+  --accent-teal: #00d1b2;
+  --border-glow: rgba(0, 229, 255, 0.2);
+  --transition-fast: 0.25s ease;
+  --transition-normal: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 10% 20%, #090c18, var(--bg-dark) 70%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 14, 26, 0.3); /* Sesuaikan opacity */
+  pointer-events: none;
+  z-index: -1;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0e1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.preloader-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+}
+
+.preloader-logo span {
+  color: var(--accent-purple);
+}
+
+#rifan_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: rgba(11, 14, 26, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-glow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all var(--transition-normal);
+}
+
+#rifan_header.scrolled {
+  padding: 12px 5%;
+  background: rgba(8, 10, 20, 0.96);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.rifan_logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+  letter-spacing: -0.5px;
+  transition: all var(--transition-fast);
+}
+
+.rifan_logo:hover {
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.rifan_logo span {
+  color: var(--accent-purple);
+}
+
+.rifan_menu ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.rifan_menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.rifan_menu a:hover,
+.rifan_menu a.active {
+  color: var(--accent-cyan);
+}
+
+.rifan_menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  box-shadow: 0 0 6px var(--accent-cyan);
+  transition: width var(--transition-normal);
+}
+
+.rifan_menu a:hover::after,
+.rifan_menu a.active::after {
+  width: 100%;
+}
+
+.rifan_hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rifan_hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(10, 20, 50, 0.3), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(20, 10, 50, 0.2), transparent 50%);
+  z-index: 0;
+}
+
+.rifan_hero_content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.rifan_hero h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rifan_hero p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rifan_hero_cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rifan_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 2px solid var(--accent-cyan);
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rifan_btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 229, 255, 0.15);
+  z-index: -1;
+  transition: width var(--transition-normal);
+}
+
+.rifan_btn:hover {
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+}
+
+.rifan_btn:hover::before {
+  width: 100%;
+}
+
+.rifan_btn_secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+}
+
+.rifan_btn_secondary:hover {
+  color: var(--bg-dark);
+  box-shadow: 0 6px 20px rgba(160, 179, 208, 0.3);
+}
+
+.rifan_btn_secondary::before {
+  background: rgba(160, 179, 208, 0.1);
+}
+
+.rifan_btn_tertiary {
+  background: transparent;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+}
+
+.rifan_btn_tertiary:hover {
+  background: rgba(57, 255, 20, 0.1);
+}
+
+.rifan_intro,
+.rifan_values,
+.rifan_technologies {
+  padding: 80px 5%;
+  text-align: center;
+  position: relative;
+}
+
+.rifan_intro {
+  background: rgba(18, 22, 41, 0.6);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_intro h3,
+.rifan_values h3,
+.rifan_technologies h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+.rifan_intro p,
+.rifan_values p,
+.rifan_technologies p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.rifan_values {
+  background: rgba(11, 14, 26, 0.7);
+}
+
+.rifan_values h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--accent-cyan);
+}
+
+.tech-tag {
+  display: inline-block;
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--accent-cyan);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin: 5px;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 229, 255, 0.2);
+}
+
+/* ===== SECTION: SOLUSI ENTERPRISE ===== */
+.rifan_solutions {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(18, 22, 41, 0.6);
+  border-top: 1px solid var(--border-glow);
+  position: relative;
+}
+
+.rifan_solutions h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+.rifan_solutions p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* ===== SECTION: WHY US ===== */
+.rifan_why {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.7);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_why h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+.rifan_why p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+/* ===== SECTION: TRUST ===== */
+.rifan_trust {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(8, 10, 20, 0.9);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_trust h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 24px;
+}
+
+.rifan_trust p {
+  max-width: 700px;
+  margin: 30px auto 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.partner-badge {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  color: var(--accent-teal);
+  background: rgba(0, 209, 178, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 209, 178, 0.2);
+  transition: all 0.3s ease;
+}
+
+.partner-badge:hover {
+  background: rgba(0, 209, 178, 0.2);
+  transform: scale(1.05);
+}
+
+#rifan_footer {
+  text-align: center;
+  padding: 24px;
+  background: rgba(8, 10, 20, 0.95);
+  border-top: 1px solid var(--border-glow);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ===== TIM ===== */
+.rifan_tim {
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.7);
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.rifan_tim h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+.rifan_deskripsi_tim {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.rifan_anggota_tim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rifan_kartu_tim {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rifan_kartu_tim:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.25);
+  border-color: rgba(138, 43, 226, 0.4);
+}
+
+.rifan_kartu_tim h3 {
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  margin: 0 0 10px 0;
+}
+
+.jabatan {
+  font-size: 0.95rem;
+  color: #8a2be2;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tim_foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* ===== VISUALISASI BLOCKCHAIN ===== */
+.blockchain-chain {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.blockchain-block {
+  background: rgba(20, 20, 40, 0.7);
+  border: 1px solid #3a3a6e;
+  border-radius: 10px;
+  padding: 16px 12px;
+  width: 140px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.blockchain-block .block-header {
+  font-weight: bold;
+  color: #8a2be2;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.blockchain-block .block-hash {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #00f7ff;
+  margin-bottom: 8px;
+  word-break: break-all;
+}
+
+.blockchain-block .block-data {
+  font-size: 0.85rem;
+  color: #39ff14;
+}
+
+.blockchain-link {
+  height: 4px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, #8a2be2, #00f7ff, transparent);
+  border-radius: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes blockchainGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(138, 43, 226, 0.3); }
+  50% { box-shadow: 0 0 16px rgba(0, 247, 255, 0.5); }
+}
+
+.blockchain-block {
+  animation: blockchainGlow 4s infinite ease-in-out;
+}
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(138, 43, 226, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover {
+  background: var(--accent-cyan);
+  transform: translateY(-3px);
+}
+
+/* ===== ANIMASI ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* ===== RESPONSIF ===== */
+@media (max-width: 768px) {
+  #rifan_header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .rifan_menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .rifan_hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .rifan_hero p {
+    font-size: 1rem;
+  }
+
+  .rifan_hero_cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rifan_btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .rifan_solutions .card,
+  .rifan_why .feature {
+    min-width: 100%;
+  }
+
+  .rifan_tim h2 {
+    font-size: 2rem;
+  }
+
+  .rifan_kartu_tim {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rifan_hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .rifan_intro h3,
+  .rifan_values h3,
+  .rifan_technologies h3,
+  .rifan_solutions h3,
+  .rifan_why h3,
+  .rifan_trust h3 {
+    font-size: 1.8rem;
+  }
+
+  .rifan_solutions .card,
+  .rifan_why .feature {
+    padding: 20px 16px;
+  }
+
+  .rifan_trust > div {
+    gap: 16px;
+  }
+
+  .rifan_trust span {
+    font-size: 0.9rem;
+    padding: 5px 12px;
+  }
+}
+
+/* ===== SECTION: TESTIMONIALS ===== */
+.rifan_testimonials {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(8, 10, 20, 0.8);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_testimonials h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 40px;
+}
+
+.testimonial-card {
+  background: rgba(20, 25, 40, 0.6);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  text-align: left;
+  flex: 1;
+  min-width: 300px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
+.testimonial-card p {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.testimonial-card strong {
+  color: var(--accent-cyan);
+}
+
+/* ===== SECTION: FEATURED PROJECT ===== */
+.rifan_featured-project {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(0, 0, 10, 0.7);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_featured-project h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+
+.rifan_featured-project p {
+  max-width: 800px;
+  margin: 20px auto;
+  color: var(--text-secondary);
+}
+
+.project-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-details div {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.project-details strong {
+  color: var(--accent-cyan);
+}
+
+/* ===== SECTION: JOURNEY ===== */
+.rifan_journey {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(11, 14, 26, 0.6);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_journey h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 40px;
+}
+
+.journey-step {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  background: rgba(15, 20, 30, 0.7);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.journey-step:hover {
+  transform: translateY(-5px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.journey-step div:first-child {
+  font-size: 2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.journey-step strong {
+  color: var(--accent-cyan);
+  display: block;
+  margin-top: 10px;
+}
+
+/* ===== SECTION: FAQ ===== */
+.rifan_faq {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(10, 10, 20, 0.6);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_faq h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 30px;
+}
+
+.rifan_faq details {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  background: rgba(20, 20, 40, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rifan_faq summary {
+  cursor: pointer;
+  color: var(--accent-cyan);
+  font-weight: bold;
+  padding: 10px;
+}
+
+.rifan_faq p {
+  padding: 10px;
+  margin-top: 10px;
+  color: var(--text-secondary);
+}
+
+/* ===== SECTION: BLOG PREVIEW ===== */
+.rifan_blog-preview {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(5, 5, 15, 0.8);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_blog-preview h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 40px;
+}
+
+.blog-card {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(20, 25, 40, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.blog-card h4 {
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.blog-card small {
+  color: #aaa;
+}
+
+.blog-card p {
+  color: var(--text-secondary);
+  margin-top: 10px;
+}
+
+.blog-card a {
+  color: var(--accent-cyan);
+  font-size: 0.95em;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CLOSING CTA ===== */
+.rifan_closing-cta {
+  padding: 80px 5%;
+  text-align: center;
+  background: rgba(18, 22, 41, 0.7);
+  border-top: 1px solid var(--border-glow);
+}
+
+.rifan_closing-cta h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-cyan);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.rifan_closing-cta .rifan_btn {
+  background: linear-gradient(90deg, var(--accent-purple), #5a1bb0);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+  padding: 14px 32px;
+  border-radius: 30px;
+}
+
+.rifan_closing-cta .rifan_btn:hover {
+  background: linear-gradient(90deg, #5a1bb0, var(--accent-purple));
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.rwa {
+  color: var(--accent-purple);
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.rifan_logo {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+}
+
+.logo-image {
+    height: 60px;
+    width: 60px; 
+}
