@@ -4,6 +4,8 @@
 **NexaChain Labs** adalah website company profile yang berfokus pada pengembangan solusi **blockchain dan Web3** untuk masa depan digital yang aman, efisien, dan terdesentralisasi.  
 Website ini menampilkan profil perusahaan, layanan utama, tim pengembang, serta halaman interaktif seperti **buku tamu** dan **kontak** untuk kolaborasi.
 
+Link Website: https://rifannovandi.github.io/NexaChainLabs/
+
 ---
 
 ## 🚀 Tujuan Proyek
